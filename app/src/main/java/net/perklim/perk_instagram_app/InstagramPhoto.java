@@ -8,17 +8,17 @@ public class InstagramPhoto {
     public String caption;
     public String photo_url;
     public int image_height;
-    public int likes_count;
+    public int likes;
 
     public InstagramPhoto(String new_username, String new_caption, String new_photo_url, int new_image_height, int new_likes_count ){
         username = new_username;
         caption = new_caption;
         photo_url = new_photo_url;
         image_height = new_image_height;
-        likes_count = new_likes_count;
+        likes = new_likes_count;
     }
 
     public String getCaption(){
-        return "User: " + username + " Caption: " + caption + " Likes: " + likes_count;
+        return "User: " + username + " Caption: " + caption + " Likes: " + likes;
     }
 }
