@@ -11,7 +11,7 @@
         android:minHeight="50dp"
         android:layout_below="@+id/ivUserPhoto"
         android:layout_alignParentLeft="true"
-         />
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:layout_width="wrap_content"
