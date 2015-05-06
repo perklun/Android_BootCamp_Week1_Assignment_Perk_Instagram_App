@@ -1,7 +1,8 @@
 package net.perklim.perk_instagram_app;
 
 import android.content.Context;
-import android.graphics.Movie;
+import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 import java.util.List;
 
@@ -34,12 +37,32 @@ public class InstagramArrayAdapter extends ArrayAdapter<InstagramPhoto> {
         // Lookup view for data population
         ImageView ivPhoto = (ImageView) convertView.findViewById(R.id.ivPhoto);
         TextView tvCaption = (TextView) convertView.findViewById(R.id.tvCaption);
+        ImageView ivUserPhoto = (ImageView) convertView.findViewById(R.id.ivUserPhoto);
+        TextView tvUserName = (TextView) convertView.findViewById(R.id.tvUserName);
         // Populate the data into the template view using the data object
         tvCaption.setText(photo.getCaption());
+        tvUserName.setText(photo.getUsername());
         //need to clear out image in case of recycled
         ivPhoto.setImageResource(0);
         //use picasso to retrieve image
         Picasso.with(getContext()).load(photo.photo_url).into(ivPhoto);
+
+        ivUserPhoto.setImageResource(0);
+        //rounded profile pictures
+        Transformation transformation = new RoundedTransformationBuilder()
+                .borderColor(Color.WHITE)
+                .borderWidthDp(1)
+                .cornerRadiusDp(300)
+                .oval(false)
+                .build();
+
+        Picasso.with(getContext())
+                .load(photo.user_photo_url)
+                .fit()
+                .transform(transformation)
+                .into(ivUserPhoto);
+       // Log.i("DEBUG JSON", photo.user_photo_url);
+
         // Return the completed view to render on screen
         return convertView;
     }

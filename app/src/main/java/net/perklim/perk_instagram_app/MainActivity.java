@@ -43,7 +43,7 @@ public class MainActivity extends ActionBarActivity {
         client.get(instagram_url+client_id, null, new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                ///Log.i("DEBUG JSON", response.toString());
+                Log.i("DEBUG JSON", response.toString());
                 JSONArray photo_json = null;
                 try{
                     photo_json = response.getJSONArray("data");
@@ -54,7 +54,8 @@ public class MainActivity extends ActionBarActivity {
                                 obj.getJSONObject("caption").getString("text"),
                                 obj.getJSONObject("images").getJSONObject("standard_resolution").getString("url"),
                                 obj.getJSONObject("images").getJSONObject("standard_resolution").getInt("height"),
-                                obj.getJSONObject("likes").getInt("count")
+                                obj.getJSONObject("likes").getInt("count"),
+                                obj.getJSONObject("user").getString("profile_picture")
                         );
                         photo_array.add(photo);
                     }
