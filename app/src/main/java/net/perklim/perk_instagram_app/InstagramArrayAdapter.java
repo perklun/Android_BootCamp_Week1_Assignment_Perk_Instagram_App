@@ -23,7 +23,6 @@ public class InstagramArrayAdapter extends ArrayAdapter<InstagramPhoto> {
     //take context and data souce, we should already know the resource
     public InstagramArrayAdapter(Context context, List<InstagramPhoto> objects) {
         super(context, R.layout.photo_item, objects);
-
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -39,14 +38,15 @@ public class InstagramArrayAdapter extends ArrayAdapter<InstagramPhoto> {
         TextView tvCaption = (TextView) convertView.findViewById(R.id.tvCaption);
         ImageView ivUserPhoto = (ImageView) convertView.findViewById(R.id.ivUserPhoto);
         TextView tvUserName = (TextView) convertView.findViewById(R.id.tvUserName);
+        TextView tvLikes = (TextView) convertView.findViewById(R.id.tvLikes);
         // Populate the data into the template view using the data object
         tvCaption.setText(photo.getCaption());
         tvUserName.setText(photo.getUsername());
+        tvLikes.setText(photo.getLikes());
         //need to clear out image in case of recycled
         ivPhoto.setImageResource(0);
         //use picasso to retrieve image
         Picasso.with(getContext()).load(photo.photo_url).into(ivPhoto);
-
         ivUserPhoto.setImageResource(0);
         //rounded profile pictures
         Transformation transformation = new RoundedTransformationBuilder()
@@ -55,14 +55,11 @@ public class InstagramArrayAdapter extends ArrayAdapter<InstagramPhoto> {
                 .cornerRadiusDp(300)
                 .oval(false)
                 .build();
-
         Picasso.with(getContext())
                 .load(photo.user_photo_url)
                 .fit()
                 .transform(transformation)
                 .into(ivUserPhoto);
-       // Log.i("DEBUG JSON", photo.user_photo_url);
-
         // Return the completed view to render on screen
         return convertView;
     }

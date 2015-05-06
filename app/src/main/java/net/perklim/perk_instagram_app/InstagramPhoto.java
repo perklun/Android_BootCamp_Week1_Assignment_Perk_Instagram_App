@@ -11,7 +11,7 @@ public class InstagramPhoto {
     public int likes;
     public String user_photo_url;
 
-    public InstagramPhoto(String new_username, String new_caption, String new_photo_url, int new_image_height, int new_likes_count, String new_user_photo_url ){
+    public InstagramPhoto(String new_username, String new_caption, String new_photo_url, int new_image_height, int new_likes_count, String new_user_photo_url ) {
         username = new_username;
         caption = new_caption;
         photo_url = new_photo_url;
@@ -19,11 +19,12 @@ public class InstagramPhoto {
         likes = new_likes_count;
         user_photo_url = new_user_photo_url;
     }
-
-    public String getCaption(){
-        return caption + " Likes: " + likes;
-    }
+    public String getCaption(){ return caption; }
     public String getUsername(){
         return username;
     }
+    public String getLikes(){
+        return likes + " likes";
+    }
+
 }
