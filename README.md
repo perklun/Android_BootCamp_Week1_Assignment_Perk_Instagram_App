@@ -13,4 +13,4 @@ Completed user stories:
  
 Walkthrough of all user stories:
 
-![](perk_instagram_app_with_optional.gif.gif)
+![](perk_instagram_app_with_optional.gif)
