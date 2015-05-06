@@ -9,7 +9,8 @@ Completed user stories:
 
  * [x] Required: User can scroll through current popular photos from Instagram
  * [x] Required: For each photo displayed, user can see the following details: Graphic, Caption, Username, Like Count
+ * [x] Advanced: Display each user profile image using a RoundedImageView
  
 Walkthrough of all user stories:
 
-![](perk_instagram_app.gif)
+![](perk_instagram_app_optional.gif)
