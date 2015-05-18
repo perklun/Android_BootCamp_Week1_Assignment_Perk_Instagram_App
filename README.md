@@ -1,4 +1,4 @@
-#Perk Instagram App
+#Instagram App
 Android Bootcamp Week 1 Assignment: Instagram App
 
 This is an Android application that retrieves the popular photos on Instagram. It uses Android Async to make HTTP requests to Instagram RESTFUL API and uses Picasso to retrieve the images. It has a custom ArrayAdapter to display the Instagram Posts.
