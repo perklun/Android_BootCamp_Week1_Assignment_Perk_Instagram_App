@@ -13,4 +13,4 @@ Technica Details
 
 Walkthrough of all user stories:
 ---
-![](popular-instagram-photos.gif)
+![](Popular-Instagram-Photos.gif)
