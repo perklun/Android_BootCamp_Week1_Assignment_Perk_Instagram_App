@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class MainActivity extends ActionBarActivity {
 
     // Instagram params
-    public static String client_id = "2e64cf453fa140b0a92459eab546ada9";
+    public static String client_id = "";
     public static String instagram_url = "https://api.instagram.com/v1/media/popular?client_id=";
 
     private static ArrayList<InstagramPhoto> photo_array;
